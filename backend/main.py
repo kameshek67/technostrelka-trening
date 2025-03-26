@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Security
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.endpoints.login_router import login_router
+from backend.app.endpoints.login_router import login_router
 
 app = FastAPI(
     root_path='/api'

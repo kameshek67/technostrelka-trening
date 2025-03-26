@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Security
-from app.shemas.users_shemas import RegisterStudent
-from app.functions.login_function import registration_student, auth_student
+from backend.app.shemas.users_shemas import RegisterStudent
+from backend.app.functions.login_function import registration_student, auth_student
 
 login_router = APIRouter()
 

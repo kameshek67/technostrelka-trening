@@ -4,5 +4,5 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SUPABASE_URL = str(os.getenv("SUPABASE_URL"))
-SUPABASE_KEY = str(os.getenv("SUPABASE_KEY"))
+SUPABASE_URL = "https://fmvgwvuxdpkofkfylffl.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtdmd3dnV4ZHBrb2ZrZnlsZmZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI5MzIzNzIsImV4cCI6MjA1ODUwODM3Mn0.qM6zNRVJKW18ia8A8Z_mFsKAZlo_QIteuy01MaBnKJA"
