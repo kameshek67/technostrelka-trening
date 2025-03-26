@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Mandarin</string>
+    <string name="signin_top_text">Привет!</string>
+    <string name="signin_top_hi">Заполните Свои Данные</string>
+    <string name="signin_email">Email</string>
+    <string name="signin_email_hint">xyz@gmail.com</string>
+    <string name="signin_password">Пароль</string>
+    <string name="signin_password_hint">••••••••</string>
+    <string name="signin_fix">Воcстановить</string>
+    <string name="signin_auth">Войти</string>
+    <string name="signin_bottom_text">Вы впервые?</string>
+    <string name="signin_bottom_click">Создать пользователя</string>
+
+    <string name="register_auth">Зарегистрироваться</string>
+    <string name="register_top_text">Регистрация</string>
+    <string name="register_name">Ваше имя</string>
+    <string name="register_hint_name">xxxxxxxx</string>
+    <string name="register_bottom_text">Есть аккаунт?</string>
+    <string name="register_bottom_click">Войти</string>
+</resources>
