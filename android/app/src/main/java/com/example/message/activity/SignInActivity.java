@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,7 +32,7 @@ public class SignInActivity extends AppCompatActivity {
     TextInputEditText signin_password_input, signin_email_input;
     AppCompatButton signin_auth;
     TextView signin_bottom_click;
-    Intent RegisterActivity, HomeActivity;
+    Intent SignInTeacherActivity, HomeActivity;
 
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
@@ -46,7 +47,7 @@ public class SignInActivity extends AppCompatActivity {
         });
 
 
-        RegisterActivity = new Intent(this, RegisterActivity.class);
+        SignInTeacherActivity = new Intent(this, SignInTeacherActivity.class);
         HomeActivity = new Intent(this, HomeActivity.class);
 
 
@@ -61,31 +62,29 @@ public class SignInActivity extends AppCompatActivity {
 
             String email = String.valueOf(signin_email_input.getText());
             String password = String.valueOf(signin_password_input.getText());
+            //Нужно было для Body запроса
+            //User user = new User(email, password);
 
-            User user = new User(email, password);
-
-            Call<ResponseBody> call = api.signin("password",
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imprc2Zqa3Jkd3Vhbm9tbWZnY2hyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEzNzQxOTAsImV4cCI6MjA1Njk1MDE5MH0.b49BcB-adIVODY3H_kW-7S5vckJm7Z5eSvnotH1hrFI",
-                    "application/json",
-                    user);
+            Call<ResponseBody> call = api.signin(email, password);
             call.enqueue(new Callback<ResponseBody>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                     if (response.isSuccessful()) {
                         startActivity(new Intent(SignInActivity.this, HomeActivity.class));
                     }
+                    Toast.makeText(getApplicationContext(),"Неверные данные", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void onFailure(Call<ResponseBody> call, Throwable throwable) {
-
+                    Toast.makeText(getApplicationContext(),"Ошибка подключения к серверу", Toast.LENGTH_SHORT).show();
                 }
             });
         });
 
 
         signin_bottom_click.setOnClickListener(view -> {
-            startActivity(RegisterActivity);
+            startActivity(SignInTeacherActivity);
         });
     }
 }

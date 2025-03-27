@@ -20,7 +20,7 @@ def login_student(student_data: RegisterStudent):
     return {'detail': 'success'}
 
 
-@login_router.get("/authorization", summary='Авторизация ученика')
+@login_router.post("/authorization", summary='Авторизация ученика')
 def authorization_student(login: str, password: str):
     """
     Принимаются данные школьника. Возвращается сообщение с результатом запроса
